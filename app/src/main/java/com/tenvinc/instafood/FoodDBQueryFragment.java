@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,7 +22,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.tenvinc.instafood.env.Logger;
 import com.tenvinc.instafood.tflite.Classifier;
 
@@ -31,11 +29,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,6 +54,8 @@ public class FoodDBQueryFragment extends Fragment {
 
     private Activity mActivity;
 
+    // Caching DB
+    private HashMap<String, JSONObject> cachedFoodMeta;
 
     public FoodDBQueryFragment() {
         // Required empty public constructor
@@ -80,6 +75,7 @@ public class FoodDBQueryFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);  // headless fragment mode
+        cachedFoodMeta = new HashMap<>();
     }
 
     @Override
@@ -109,7 +105,7 @@ public class FoodDBQueryFragment extends Fragment {
     public void computeCalories(List<Classifier.Recognition> items) {
         requestAllPermissions(PERMISSION_INTERNET, PERMISSION_NETSTATEACESS);
         if (checkNetworkConnection()) {
-            FoodQueryHandler handler = new FoodQueryHandler(items, (FoodDBQueryCallback) mActivity);
+            FoodQueryHandler handler = new FoodQueryHandler(items, (FoodDBQueryCallback) mActivity, cachedFoodMeta);
             handler.updateCalories();
         }
     }
@@ -173,6 +169,7 @@ public class FoodDBQueryFragment extends Fragment {
         private final List<Classifier.Recognition> itemsDetected;
         private int numLeft;
         private FoodDBQueryCallback mCallbackActivity;
+        private HashMap<String, JSONObject> cachedFoodMeta;
 
         Response.ErrorListener errorListener = new Response.ErrorListener() {
             @Override
@@ -190,15 +187,28 @@ public class FoodDBQueryFragment extends Fragment {
         };
 
         public FoodQueryHandler(List<Classifier.Recognition> itemsDetected,
-                                FoodDBQueryCallback mCallbackActivity) {
+                                FoodDBQueryCallback mCallbackActivity,
+                                HashMap<String, JSONObject> cachedFoodMeta) {
             this.itemsDetected = itemsDetected;
             numLeft = itemsDetected.size();
             this.mCallbackActivity = mCallbackActivity;
+            this.cachedFoodMeta = cachedFoodMeta;
         }
 
         public void updateCalories() {
             for (int i=0; i<itemsDetected.size(); i++) {
-                sendSearchReq(i);
+                String label = itemsDetected.get(i).getTitle();
+                try {
+                    if (cachedFoodMeta.containsKey(label)) {
+                        Log.i(TAG, "Getting from cache " + label);
+                        itemsDetected.get(i).setCaloriesCount(getCaloriesFromReport(cachedFoodMeta.get(label))); // inplace update of list
+                        decrementCount();
+                    } else {
+                        sendSearchReq(i);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -257,6 +267,24 @@ public class FoodDBQueryFragment extends Fragment {
             queue.add(jsonObjectRequest);
         }
 
+        public float getCaloriesFromReport(JSONObject report) throws JSONException {
+            JSONArray nutrientList = report.getJSONArray("foodNutrients");
+
+            float calories = -1;
+            for (int i=0; i<nutrientList.length(); i++) {
+                JSONObject nutrientF = nutrientList.getJSONObject(i);
+                JSONObject nutrient = nutrientF.getJSONObject("nutrient");
+                if (nutrient.getString("name").equals("Energy")
+                        && nutrient.getString("unitName").equals("kcal")) {
+                    // look for cubic inch
+                    double calPer100g = (double) nutrientF.getInt("amount");
+                    calories = (float) calPer100g; // Can afford to lose some precision cuz not used for computation
+                    return calories;
+                }
+            }
+            return calories;
+        }
+
         public void sendReportReq(int idx, int ndbno) {
             VolleyLog.DEBUG = true;
             RequestQueue queue = SingletonRequestQueue.getInstance(getActivity().getApplicationContext())
@@ -267,26 +295,16 @@ public class FoodDBQueryFragment extends Fragment {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(uri, null,
                     (Response.Listener<JSONObject>) response -> {
                         try {
-                            JSONArray nutrientList = response.getJSONArray("foodNutrients");
-//
-                        float calories = -1;
-                        for (int i=0; i<nutrientList.length(); i++) {
-                            JSONObject nutrientF = nutrientList.getJSONObject(i);
-                            JSONObject nutrient = nutrientF.getJSONObject("nutrient");
-                            if (nutrient.getString("name").equals("Energy")
-                                && nutrient.getString("unitName").equals("kcal")) {
-                                // look for cubic inch
-                                double calPer100g = (double) nutrientF.getInt("amount");
-                                calories = (float) calPer100g; // Can afford to lose some precision cuz not used for computation
-                                break;
+                            // TODO: Remove this stub and replace with actual implementation
+                            float calories = getCaloriesFromReport(response);
+                            Classifier.Recognition item = itemsDetected.get(idx);
+                            if (!cachedFoodMeta.containsKey(item.getTitle())) {
+                                cachedFoodMeta.put(item.getTitle(), response);
                             }
-                        }
-
-//                        // TODO: Remove this stub and replace with actual implementation
-                        itemsDetected.get(idx).setCaloriesCount(calories); // inplace update of list
-                        decrementCount();
+                            item.setCaloriesCount(calories); // inplace update of list
+                            decrementCount();
                         } catch (JSONException e) {
-
+                            e.printStackTrace();
                         }
                     }, errorListener) {
                 @Override
