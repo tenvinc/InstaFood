@@ -45,19 +45,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a18cbec-37ef-42a9-9120-347ae0aa7c57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_android_28.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/.idea/libraries/Gradle__android_android_28.xml" afterDir="false" />
-      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" afterDir="false" />
-      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_3_jar.xml" afterDir="false" />
-      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/FoodDBQueryFragment.java" afterDir="false" />
-      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/WIP/TestActivity.java" afterDir="false" />
-      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/res/layout/activity_http.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/.idea/libraries/Gradle__com_android_volley_volley_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/SingletonRequestQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -66,23 +58,6 @@
       <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/.idea/workspace.xml" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/.idea/workspace.xml" afterDir="false" />
       <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/app.iml" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/app.iml" afterDir="false" />
       <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/build.gradle" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/build.gradle" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/CameraActivity.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/CameraActivity.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/CameraConnectionFragment.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/CameraConnectionFragment.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/DetectorActivity.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/DetectorActivity.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/LegacyCameraConnectionFragment.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/LegacyCameraConnectionFragment.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/AutoFitTextureView.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/AutoFitTextureView.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/OverlayView.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/OverlayView.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/RecognitionScoreView.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/RecognitionScoreView.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/ResultsView.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/ResultsView.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/env/BorderedText.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/env/BorderedText.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/env/ImageUtils.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/env/ImageUtils.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/env/Logger.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/env/Logger.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/env/Size.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/env/Size.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tflite/Classifier.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tflite/Classifier.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tflite/TFLiteObjectDetectionAPIModel.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tflite/TFLiteObjectDetectionAPIModel.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tracking/MultiBoxTracker.java" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tracking/MultiBoxTracker.java" afterDir="false" />
-      <change beforePath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +65,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RF8M52PPMWA" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -112,11 +91,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/FoodDBQueryFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="266" selection-start-line="266" selection-end-line="266" />
+            <state relative-caret-position="205">
+              <caret line="110" column="39" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#HttpGet#0;class#FoodDBQueryFragment#0" />
+                <element signature="e#2014#2015#0" expanded="true" />
+                <element signature="e#2062#2063#0" expanded="true" />
+                <element signature="e#8936#8937#0" expanded="true" />
+                <element signature="e#16428#16429#0" expanded="true" />
+                <element signature="e#16487#16488#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,7 +137,7 @@
         <option value="tenvinc &lt;vencintgamer@gmail.com&gt;" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -183,21 +166,22 @@
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/res/layout/activity_main.xml" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/CameraActivity.java" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/OverlayView.java" />
-        <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/build.gradle" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/env/Logger.java" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/res/layout/activity_http.xml" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/AndroidManifest.xml" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/HttpActivity.java" />
-        <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/DetectorActivity.java" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/TestActivity.java" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tflite/Classifier.java" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tracking/MultiBoxTracker.java" />
+        <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/DetectorActivity.java" />
+        <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/build.gradle" />
+        <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/SingletonRequestQueue.java" />
+        <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/ChainableCallback.java" />
         <option value="/media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/FoodDBQueryFragment.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
     <option name="y" value="25" />
     <option name="width" value="960" />
     <option name="height" value="1055" />
@@ -207,6 +191,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Source Files'; set:Project Source Files; class com.jetbrains.cidr.lang.search.scopes.ProjectSourcesScopeProvider$SourceFilesScope">
           <expand>
@@ -244,6 +229,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,46 +278,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="instafood" type="462c0819:PsiDirectoryNode" />
-              <item name="customview" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InstaFood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InstaFood" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="instafood" type="462c0819:PsiDirectoryNode" />
-              <item name="env" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InstaFood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InstaFood" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="instafood" type="462c0819:PsiDirectoryNode" />
-              <item name="tflite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InstaFood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InstaFood" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="instafood" type="462c0819:PsiDirectoryNode" />
-              <item name="tracking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InstaFood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InstaFood" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -343,20 +289,14 @@
               <item name="res" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="InstaFood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InstaFood" type="462c0819:PsiDirectoryNode" />
-              <item name="tensorflow-lite" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../Android/Sdk" />
     <property name="device.picker.selection" value="RF8M52PPMWA" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../object_detection/android" />
@@ -597,6 +537,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.016008537" />
@@ -612,10 +553,10 @@
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32934782" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.16862327" side_tool="true" weight="0.17934783" />
-      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.39434364" weight="0.19130434" />
+      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.39434364" weight="0.2902174" />
       <window_info anchor="bottom" id="Android Profiler" order="6" sideWeight="0.4994664" weight="0.32934782" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49893278" weight="0.032608695" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4478261" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49893278" visible="true" weight="0.29673913" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.925" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.601087" />
       <window_info active="true" anchor="bottom" id="Messages" order="10" sideWeight="0.49786553" visible="true" weight="0.4673913" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -688,15 +629,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/DetectorActivity.java</url>
-          <line>235</line>
+          <line>236</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/FoodDBQueryFragment.java</url>
-          <line>266</line>
+          <line>199</line>
           <properties />
-          <option name="timeStamp" value="42" />
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -704,6 +645,7 @@
       <configuration name="app">
         <watch expression="conn.get" language="JAVA" />
         <watch expression="nutrient.getString(&quot;name&quot;).equals(&quot;Energy&quot;)" language="JAVA" />
+        <watch expression="searchQuery" />
       </configuration>
     </watches-manager>
   </component>
@@ -762,10 +704,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/Logger.java" />
-    <entry file="file://$PROJECT_DIR$/../../Android/Sdk/sources/android-28/android/app/Activity.java" />
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/RecognitionScoreView.java" />
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/OverlayView.java" />
     <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/res/layout/camera_connection_fragment.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -802,13 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tflite/TFLiteObjectDetectionAPIModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -873,13 +804,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -961,17 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding>
-            <element signature="e#1126#1159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/CameraActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-780">
@@ -989,30 +902,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/RecognitionScoreView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/ResultsView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/OverlayView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="13" column="80" lean-forward="true" selection-start-line="13" selection-start-column="80" selection-end-line="13" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1026,51 +919,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tflite/Classifier.java">
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/WIP/TestActivity.java" />
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/OverlayView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="67" selection-start-line="67" selection-end-line="70" />
+        <state relative-caret-position="225">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tracking/MultiBoxTracker.java">
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/customview/RecognitionScoreView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="154" column="75" selection-start-line="154" selection-start-column="75" selection-end-line="154" selection-end-column="75" />
+        <state relative-caret-position="435">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2081#2101#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tflite/TFLiteObjectDetectionAPIModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1381">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tflite/Classifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="67" selection-start-line="67" selection-end-line="70" />
         </state>
       </provider>
     </entry>
     <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/DetectorActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="156" column="20" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="20" />
+        <state relative-caret-position="528">
+          <caret line="277" column="41" selection-start-line="277" selection-start-column="41" selection-end-line="277" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8630#8654#0" expanded="true" />
+            <element signature="e#10218#10219#0" expanded="true" />
+            <element signature="e#10285#10286#0" expanded="true" />
+            <element signature="e#10350#10351#0" expanded="true" />
+            <element signature="e#10393#10394#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/WIP/TestActivity.java">
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/tracking/MultiBoxTracker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="15">
+          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/ChainableCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#167#168#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/SingletonRequestQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.volley/volley/1.1.0/65ed7df4af0e83a626f383ff49c3403342659aa9/volley-1.1.0-sources.jar!/com/android/volley/toolbox/JsonRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
     </entry>
     <entry file="file:///media/tenvinc/Windows/Users/Vincent/Desktop/InstagramFood/InstaFood/app/src/main/java/com/tenvinc/instafood/FoodDBQueryFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="266" selection-start-line="266" selection-end-line="266" />
+        <state relative-caret-position="205">
+          <caret line="110" column="39" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#HttpGet#0;class#FoodDBQueryFragment#0" />
+            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#2062#2063#0" expanded="true" />
+            <element signature="e#8936#8937#0" expanded="true" />
+            <element signature="e#16428#16429#0" expanded="true" />
+            <element signature="e#16487#16488#0" expanded="true" />
           </folding>
         </state>
       </provider>

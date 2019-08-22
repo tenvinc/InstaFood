@@ -14,6 +14,16 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.ClientError;
+import com.android.volley.NetworkError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.tenvinc.instafood.env.Logger;
 import com.tenvinc.instafood.tflite.Classifier;
 
@@ -26,7 +36,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,9 +55,9 @@ public class FoodDBQueryFragment extends Fragment {
     private static final String PERMISSION_NETSTATEACESS = Manifest.permission.ACCESS_NETWORK_STATE;
 
     // Params to query USDA database
-    private static final String API_KEY = "e33RpCtcsCnCrMQMqCiGvfguR1gGf9ChN5vWEaTl";
-    private static final String API_SEARCH_URL = "https://api.nal.usda.gov/ndb/search/";
-    private static final String API_REPORT_URL = "https://api.nal.usda.gov/ndb/reports/";
+    private static final String API_KEY = "AbtEjYICWlBZmyT7phRV21xalbvMyYeziSvfzjRI";
+    private static final String API_SEARCH_URL = "https://api.nal.usda.gov/fdc/v1/search";
+    private static final String API_REPORT_URL = "https://api.nal.usda.gov/fdc/v1/";
 
     private Activity mActivity;
 
@@ -97,8 +109,8 @@ public class FoodDBQueryFragment extends Fragment {
     public void computeCalories(List<Classifier.Recognition> items) {
         requestAllPermissions(PERMISSION_INTERNET, PERMISSION_NETSTATEACESS);
         if (checkNetworkConnection()) {
-            ComputeCaloriesAsync task = new ComputeCaloriesAsync((FoodDBQueryCallback) mActivity, items);
-            task.execute();
+            FoodQueryHandler handler = new FoodQueryHandler(items, (FoodDBQueryCallback) mActivity);
+            handler.updateCalories();
         }
     }
 
@@ -156,144 +168,143 @@ public class FoodDBQueryFragment extends Fragment {
         void updateTracker(List<Classifier.Recognition> results);
     }
 
-    private static String HttpGet(String url, String queryString) throws IOException, JSONException {
-        URL fullUrl = new URL(url + queryString);
-
-        HttpURLConnection conn = (HttpURLConnection) fullUrl.openConnection();
-        conn.setRequestProperty("Accept", "application/json");
-        conn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
-
-        conn.connect();
-
-        String reply;
-
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                sb.append(line).append("\n");
-            }
-            bufferedReader.close();
-            reply = sb.toString();
-        } finally {
-            conn.disconnect();
-        }
-
-        if (reply != null) {
-            return reply;
-        }
-
-        return conn.getResponseMessage();
-    }
-
-    private static String formulateQueryReq(String apiKey, String itemToQuery) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("?q=" + itemToQuery);
-        sb.append("&api_key=" + apiKey);
-
-        return sb.toString();
-    }
-
-    private static JSONObject getJsonFromString(String toTest) {
-        try {
-            JSONObject obj = new JSONObject(toTest);
-            return obj;
-        } catch (JSONException e) {
-            return null; //string is not JSON so nothing to return
-        }
-    }
-
-    private static String formulateReportQuery(String apiKey, String ndbno) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("?ndbno=" + ndbno);
-        sb.append("&api_key=" + apiKey);
-
-        return sb.toString();
-    }
-
-    private static class ComputeCaloriesAsync extends AsyncTask<Void, Void, String> {
-
-        private FoodDBQueryCallback mCallbackActivity;
+    private class FoodQueryHandler {
+        private boolean isReadyToUpdate;
         private final List<Classifier.Recognition> itemsDetected;
+        private int numLeft;
+        private FoodDBQueryCallback mCallbackActivity;
 
-        public ComputeCaloriesAsync(FoodDBQueryCallback activity, List<Classifier.Recognition> itemsDetected) {
-            mCallbackActivity = activity;
+        Response.ErrorListener errorListener = new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if (error instanceof ClientError) {
+                    String str = new String(error.networkResponse.data);
+                    Log.wtf(TAG, str);
+                }
+                if (error instanceof NetworkError) {
+                    Toast.makeText(getActivity().getApplicationContext(), "No network available", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getActivity().getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+
+        public FoodQueryHandler(List<Classifier.Recognition> itemsDetected,
+                                FoodDBQueryCallback mCallbackActivity) {
             this.itemsDetected = itemsDetected;
+            numLeft = itemsDetected.size();
+            this.mCallbackActivity = mCallbackActivity;
         }
 
-        @Override
-        protected void onPreExecute() {
-            //mCallbackActivity.startWaiting();
-            Log.i(TAG, "Starting calorie crawling...");
+        public void updateCalories() {
+            for (int i=0; i<itemsDetected.size(); i++) {
+                sendSearchReq(i);
+            }
         }
 
-        @Override
-        protected String doInBackground(Void... params) {
-            for (Classifier.Recognition item : itemsDetected) {
-                String label = item.getTitle();
-                try {
-                    try {
-                        String searchQuery = formulateQueryReq(API_KEY, label);
-                        String res = HttpGet(API_SEARCH_URL, searchQuery);
+        public synchronized void decrementCount() {
+            numLeft--;
+            if (numLeft == 0) {
+                Log.i(TAG, "time to update");
+                this.mCallbackActivity.updateTracker(itemsDetected);
+            }
+        }
 
-                        JSONObject resObj;
-                        if ((resObj = getJsonFromString(res)) == null) {
-                            return null;
+        public void sendSearchReq(int idx) {
+            Classifier.Recognition item = itemsDetected.get(idx);
+
+            RequestQueue queue = SingletonRequestQueue.getInstance(getActivity().getApplicationContext())
+                    .getRequestQueue();
+
+            VolleyLog.DEBUG = true;
+
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put("generalSearchInput", item.getTitle());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, API_SEARCH_URL,
+                    jsonObject, response -> {
+                        Log.d(TAG, response.toString());
+                        try {
+                            // Find out the ndbno
+                            JSONArray items = response.getJSONArray("foods");
+
+                            // TODO: implement some kind of logic to get the best result
+                            JSONObject bestRes = (JSONObject) items.get(0);
+                            int fdcid = bestRes.getInt("fdcId");
+                            sendReportReq(idx, fdcid);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
+                    }, errorListener) {
+                @Override
+                public Priority getPriority() {
+                    return Priority.LOW;
+                }
 
-                        resObj = resObj.getJSONObject("list");
-                        int numHits = resObj.getInt("total");
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<>();
+                    headers.put("Content-Type", "application/json");
+                    headers.put("x-api-key", API_KEY);
+                    return headers;
+                }
+            };
 
-                        JSONArray items = resObj.getJSONArray("item");
+            queue.add(jsonObjectRequest);
+        }
 
-                        // TODO: implement some kind of logic to get the best result
-                        JSONObject bestRes = (JSONObject) items.get(0);
-                        String ndbno = bestRes.getString("ndbno");
+        public void sendReportReq(int idx, int ndbno) {
+            VolleyLog.DEBUG = true;
+            RequestQueue queue = SingletonRequestQueue.getInstance(getActivity().getApplicationContext())
+                    .getRequestQueue();
 
-                        // Start second part to get report
-                        String reportQuery = formulateReportQuery(API_KEY, ndbno);
-                        res = HttpGet(API_REPORT_URL, reportQuery);
+            String uri = String.format("%s%d", API_REPORT_URL, ndbno);
 
-                        if ((resObj = getJsonFromString(res)) == null) {
-                            return null;
-                        }
-                        JSONObject report = (JSONObject) resObj.get("report");
-                        JSONArray nutrientList = ((JSONObject) report.get("food")).getJSONArray("nutrients");
-
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(uri, null,
+                    (Response.Listener<JSONObject>) response -> {
+                        try {
+                            JSONArray nutrientList = response.getJSONArray("foodNutrients");
+//
                         float calories = -1;
                         for (int i=0; i<nutrientList.length(); i++) {
-                            JSONObject nutrient = nutrientList.getJSONObject(i);
+                            JSONObject nutrientF = nutrientList.getJSONObject(i);
+                            JSONObject nutrient = nutrientF.getJSONObject("nutrient");
                             if (nutrient.getString("name").equals("Energy")
-                                && nutrient.getString("unit").equals("kcal")) {
+                                && nutrient.getString("unitName").equals("kcal")) {
                                 // look for cubic inch
-                                double calPer100g = nutrient.getDouble("value");
+                                double calPer100g = (double) nutrientF.getInt("amount");
                                 calories = (float) calPer100g; // Can afford to lose some precision cuz not used for computation
                                 break;
                             }
                         }
 
-                        // TODO: Remove this stub and replace with actual implementation
-                        item.setCaloriesCount(calories); // inplace update of list
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        return "Error!";
-                    }
-                } catch (IOException e) {
-                    return "Unable to retrieve web page. URL may be invalid";
-                }
-            }
-            return "finished";
-        }
+//                        // TODO: Remove this stub and replace with actual implementation
+                        itemsDetected.get(idx).setCaloriesCount(calories); // inplace update of list
+                        decrementCount();
+                        } catch (JSONException e) {
 
-        @Override
-        protected void onPostExecute(String result) {
-            if (result == null) {
-                Log.i(TAG, "Cannot retrieve food item result");
-            }
-            //mCallbackActivity.displayRes(result);
-            Log.i(TAG, "Updating the view...");
-            mCallbackActivity.updateTracker(itemsDetected);
+                        }
+                    }, errorListener) {
+                @Override
+                public Priority getPriority() {
+                    return Priority.LOW;
+                }
+
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<>();
+                    headers.put("Content-Type", "application/json");
+                    headers.put("x-api-key", API_KEY);
+                    return headers;
+                }
+            };
+            queue.add(jsonObjectRequest);
         }
     }
+
+
 }
